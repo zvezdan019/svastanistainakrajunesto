@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hemikalije</h1>
+
+
+
+<ul>
+  {% for contact in object_list %}
+    <li class="contact">{{ contact }}
+      (<a href="{% url "cros-edit" pk=contact.id %}">Izmeni</a>)
+{% if contact.id %}
+       <a href="{% url "cros-delete" pk=contact.id %}">Obrisi</a>
+    {% endif %}
+</li>
+    
+   
+  {% endfor %}
+</ul>
+
+
+<a href="{% url "cros-novo" %}">Unesi</a>
+
+
+
+{% endblock %}
+
+
+

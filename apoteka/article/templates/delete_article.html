@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Obrisi unos</h1>
+
+<p>Da li ste sigurni da zelite da obrisete {{ contact }}?</p>
+
+<form action="{% url "article-delete" pk=article.id %}" method="POST">
+  {% csrf_token %}
+
+  <input type="submit" value="Da, obrisi." />
+  <a href="{% url "article-list" %}">Ne, odustani.</a>
+</form>
+
+{% endblock %}

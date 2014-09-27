@@ -1,0 +1,29 @@
+
+<form action="{% url "article-list" %}" method="POST">
+  {% csrf_token %}
+  <ul>
+    {{ form.as_ul }}
+  </ul>
+  <input id="save_contact" type="submit" value="Save" />
+</form>
+
+
+<form action="{% url "article-list" %}" method="DELETE">
+<select>
+  {% for contact in object_list %}
+  <option class="contact">{{ contact }}</option>
+  {% endfor %}
+</select>
+
+<input type="submit" value="Delete" />
+</form>
+
+
+
+<select>
+  {% for contact in object_list %}
+  <option class="contact">{{ contact }}</option>
+  {% endfor %}
+</select>
+  <input id="delete" type="submit" value="Delete" />
+</h1>
